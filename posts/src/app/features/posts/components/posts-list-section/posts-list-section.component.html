@@ -1,0 +1,17 @@
+<div class="posts-container">
+  <!-- Post list -->
+  <ng-container *ngFor="let post of data">
+    <ng-container
+      [ngTemplateOutlet]="postItem"
+      [ngTemplateOutletContext]="{ post: post }"
+    >
+    </ng-container>
+  </ng-container>
+</div>
+
+<!-- Post card -->
+<ng-template #postItem let-post="post">
+  <div (click)="clickEvent.emit(post.id)" class="post-item">
+    {{ post.title }}
+  </div>
+</ng-template>

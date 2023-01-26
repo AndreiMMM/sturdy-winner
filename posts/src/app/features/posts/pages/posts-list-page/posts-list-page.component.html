@@ -1,0 +1,10 @@
+<div class="page" *ngIf="postsFacadeService.posts$ | async as state">
+
+  <div *ngIf="state.isLoading">LOADING...</div>
+  <div *ngIf="state.error">ERROR...</div>
+  <posts-list-section
+    *ngIf="state.value"
+    [data]="state.value"
+    (clickEvent)="postsFacadeService.navigateToViewPost(+$event)"
+  ></posts-list-section>
+</div>

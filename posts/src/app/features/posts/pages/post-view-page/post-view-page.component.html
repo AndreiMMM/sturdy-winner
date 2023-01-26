@@ -1,0 +1,12 @@
+<div class="page">
+<ng-container *ngIf="postsFacadeService.selectedPost$ | async as postState">
+  <div class="title">{{ postState.title }}</div>
+
+    <ng-container *ngIf="postsFacadeService.comments$ | async as commentsState">
+      <div *ngIf="commentsState.isLoading">LOADING...</div>
+      <div *ngIf="commentsState.error">ERROR...</div>
+      <div *ngIf="!commentsState.isLoading && !commentsState.value?.length">COMMENTS EMPTY STATE...</div>
+      <div *ngFor="let comment of commentsState.value">{{ comment.body }}</div>
+    </ng-container>
+</ng-container>
+</div>

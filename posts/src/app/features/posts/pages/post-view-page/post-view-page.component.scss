@@ -1,0 +1,13 @@
+@use "src/app/modules/core/scss/sizes" as sizes;
+
+.card {
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+
+  cursor: pointer;
+  background: gray;
+  padding: sizes.$spacing * 2;
+  border: 2px solid #0000005e;
+  border-radius: 4px;
+}

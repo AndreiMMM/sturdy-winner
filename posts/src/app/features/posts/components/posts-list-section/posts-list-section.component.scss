@@ -1,0 +1,20 @@
+@use "src/app/modules/core/scss/sizes" as sizes;
+
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: sizes.$spacing;
+  padding: sizes.$spacing;
+
+  .post-item {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    cursor: pointer;
+    background: white;
+    padding: sizes.$spacing * 2;
+    border: 2px solid #0000005e;
+    border-radius: 4px;
+  }
+}
